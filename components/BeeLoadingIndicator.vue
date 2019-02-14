@@ -2,6 +2,7 @@
   <div class="container">
     <div class="bee-outer">
       <div
+        id="test"
         class="bee-inner"
         @click="releaseBees">
         <bee-icon/>
@@ -26,6 +27,7 @@ export default {
   methods: {
     releaseBees() {
       this.$root.$emit('release-bees')
+      dataLayer.push({'event': 'enter'})
     }
   }
 }

@@ -217,6 +217,7 @@ export default {
       setTimeout(() => (this.activeFace = false), 222)
       setTimeout(() => (this.flush = false), 222)
       setTimeout(() => (this.faceClass = ''), 222)
+      dataLayer.push({'event': 'sting'})
     },
     press() {
       this.activeFace = false
@@ -228,6 +229,7 @@ export default {
       setTimeout(() => (this.activeFace = false), 666)
       setTimeout(() => (this.flushFart = false), 666)
       setTimeout(() => (this.faceClass = ''), 666)
+      dataLayer.push({'event': 'fart'})
     },
     stingOption1: function(event) {
       this.faceClass = 'bibi-pain-1'
