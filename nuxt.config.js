@@ -78,7 +78,7 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/style-resources',
     '@nuxtjs/pwa',
-    '@nuxtjs/google-tag-manager'
+    ['@nuxtjs/google-tag-manager', { id: 'GTM-5Z3MQPC' }]
   ],
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
@@ -89,14 +89,14 @@ module.exports = {
     ],
   },
   pwa: {
-    icon: false
+    icon: false,
     // meta: false,
-    // manifest: false,
+    manifest: false
     // oneSignal: false
   },
-  googleTagManager: {
-    id: 'GTM-5Z3MQPC'
-  },
+  // googleTagManager: {
+  //   id: 'GTM-5Z3MQPC'
+  // },
 
   /*
   ** Generate configuration
