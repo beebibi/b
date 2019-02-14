@@ -129,12 +129,11 @@ import BeeTitle from '@/components/BeeTitle'
 import BeeParticles from '@/components/BeeParticles'
 import BeeSoundButton from '@/components/BeeSoundButton'
 import BeeLoadingIndicator from '@/components/BeeLoadingIndicator'
-// import BeeSocial from '@/components/BeeSocial'
+import BeeSocial from '@/components/BeeSocial'
 import BeeCounter from '@/components/BeeCounter'
 import BeeAd from '@/components/BeeAd'
 import BeeMessenger from '@/components/BeeMessenger'
 import BeeScores from '@/components/scoreboard/BeeScores'
-// import BeeUsersScores from '@/components/BeeUsersScores'
 import {Howl, Howler} from 'howler'
 
 export default {
@@ -144,12 +143,11 @@ export default {
     BeeParticles,
     BeeSoundButton,
     BeeLoadingIndicator,
-    // BeeSocial,
+    BeeSocial,
     BeeCounter,
     BeeAd,
     BeeMessenger,
     BeeScores
-    // BeeUsersScores
   },
   head() {
     return {
