@@ -22,6 +22,7 @@ export default {
   methods: {
     updateActive() {
       this.$root.$emit('update-active')
+      dataLayer.push({'event': 'clickDavidStar'})
       // this.toggleActive()
     }
   }

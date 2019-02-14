@@ -50,6 +50,7 @@ export default {
     flipBoard() {
       if (this.scoreView === this.scoreView1) {
         this.scoreView = this.scoreView2
+        dataLayer.push({'event': 'viewScoreboard'})
       } else if (this.scoreView === this.scoreView2) {
         this.scoreView = this.scoreView1
       }
