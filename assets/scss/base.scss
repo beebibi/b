@@ -1,0 +1,124 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: $font;
+  font-size: $base;
+  font-weight: 300;
+  line-height: $line-height;
+  color: $white;
+  margin: 0;
+  overflow-x: hidden;
+  @include gradient($background, $background-alt);
+  @include desktop {
+    font-size: $base-m;
+  }
+}
+
+article,
+aside,
+dialog,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+p,
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1.618033rem;
+  text-align: left;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+// li {
+//   padding-bottom: 0.4rem;
+// }
+
+// ol li {
+//   padding-left: $gap / $golden / $golden;
+// }
+
+// figure {
+//   margin: 0;
+//   margin-top: 4rem;
+// }
+
+// img {
+//   max-width: 100%;
+// }
+
+// hr {
+//   border: 0.5px solid rgba($black, 0.07);
+//   // margin: 40px 0;
+// }
+
+[tabindex='-1']:focus {
+  outline: none !important;
+}
+
+::selection {
+  color: $background;
+  background: rgba($brand, 0.99); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  color: $background;
+  background: rgba($brand, 0.99); /* Gecko Browsers */
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+////////////////////////////////////////////////////////////
+// Base Styles
+//
+
+.main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%; 
+  overflow: hidden;
+  @include gradient($background, $background-alt);
+  z-index: -1;
+}
+a {
+  text-decoration: none;
+  color: $brand;
+  cursor: pointer;
+  transition: color 0.333s ease;
+  &:hover {
+    color: $muted-alt;
+  }
+}

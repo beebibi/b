@@ -1,0 +1,221 @@
+// ==================================================================
+// BeeBibi: Animations
+//
+
+//////////////////////////////////////////////////////////
+// slideDown
+//
+// BeeTitle
+
+.slideDown-enter-active,
+.slideDown-leave-active {
+  transition: transform 0.333s ease;
+  // opacity: 1;
+}
+.slideDown-enter,
+.slideDown-leave-to {
+  transform: translateY(-600%);
+  // opacity: 0;
+}
+
+//////////////////////////////////////////////////////////
+// slideUp
+//
+// Bibi
+
+.slideUp-enter-active,
+.slideUp-leave-active {
+  transition: transform 0.333s ease-in;
+}
+.slideUp-enter,
+.slideUp-leave-to {
+  transform: translateY(100%);
+}
+
+//////////////////////////////////////////////////////////
+// fadeRightUp
+//
+// BeeCounter (Stings)
+
+.fadeRightUp-enter-active {
+  transition: all 0.999s cubic-bezier(0, 0.33, 0.2, 1) 0.666s;
+}
+
+.fadeRightUp-leave-active {
+  transition: all 0.444s ease-in;
+}
+
+.fadeRightUp-enter {
+    transform: translateX(66%);
+    opacity: 0;
+}
+
+.fadeRightUp-leave-to {
+    transform: translateY(-666%);
+    opacity: 0;
+}
+
+//////////////////////////////////////////////////////////
+// fadeLeftUp
+//
+// BeeCounter (Farts)
+
+.fadeLeftUp-enter-active {
+  transition: all 0.999s cubic-bezier(0, 0.33, 0.2, 1) 0.999s;
+}
+
+.fadeLeftUp-leave-active {
+  transition: all 0.444s ease-in;
+}
+
+.fadeLeftUp-enter {
+    transform: translateX(-66%);
+    opacity: 0;
+}
+
+.fadeLeftUp-leave-to {
+    transform: translateY(-666%);
+    opacity: 0;
+}
+
+//////////////////////////////////////////////////////////
+// fadeRight
+//
+// BeeCounter (Stings)
+
+.fadeRight-enter-active {
+  transition: all 0.666s cubic-bezier(0, 0.33, 0.2, 1) 0.333s;
+}
+
+
+.fadeRight-leave-active {
+  transition: all 0.666s cubic-bezier(0, 0.33, 0.2, 1) 0.111s;
+}
+
+.fadeRight-enter,
+.fadeRight-leave-to {
+    transform: translateX(222%);
+    opacity: 0;
+}
+
+//////////////////////////////////////////////////////////
+// fade
+//
+// xx
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 2.33s ease-out;
+  transform: translateY(0);
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.fade-enter-active,
+.fade-enter {
+  // transition-delay: 2s;
+}
+
+//////////////////////////////////////////////////////////
+// pop
+//
+// BeeTitle
+
+.pop-enter-active,
+.pop-leave-active {
+  transition: all 0.333s ease;
+  // opacity: 1;
+}
+.pop-enter,
+.pop-leave-to {
+  transform: scale3d(0.3, 0.3, 0.3);
+  opacity: 0;
+}
+
+//////////////////////////////////////////////////////////
+// Flip
+//
+// BeeScores
+
+.flip-enter-active,
+.flip-leave-active {
+  transition: all 0.222s cubic-bezier(0, 0.33, 0.2, 1);
+}
+.flip-enter {
+  transform: perspective(666px) rotate3d(0, 1, 0, -90deg);
+  opacity: 0.333;
+}
+
+.flip-leave-to {
+  transform: perspective(666px) rotate3d(0, 1, 0, 90deg);
+  opacity: 0.333;
+}
+
+//////////////////////////////////////////////////////////
+// Keyframes
+//
+
+// @keyframes animateTitle {
+//   0% {
+//     transform: translateY(-600%);
+//   }
+//   100% {
+//     transform: translateY(0);
+//   }
+// }
+
+@keyframes fadeInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(40%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes animate-bibi {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+// Scoreboard flip
+
+// @keyframes flip {
+//   from {
+//     transform: perspective(666px);
+//   }
+
+//   30% {
+//     transform: perspective(666px) rotate3d(0, 1, 0, -15deg);
+//     opacity: 1;
+//   }
+
+//   to {
+//     transform: perspective(666px) rotate3d(0, 1, 0, 90deg);
+//     opacity: 0;
+//   }
+// }
+
+// .flipOutY {
+//   animation-duration: 0.75s;
+//   backface-visibility: visible !important;
+//   animation-name: flipOutY;
+// }

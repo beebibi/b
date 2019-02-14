@@ -1,0 +1,48 @@
+// ==================================================================
+// Typography
+//
+b {
+  font-weight: 700;
+}
+
+h1 {
+  @include fp(font-size, 40, 58);
+  @include fp(margin-top, 32, 50);
+  @include fp(margin-bottom, 40, 58);
+  font-weight: 100;
+}
+
+h2 {
+  @include fp(font-size, 22, 32);
+  @include fp(margin-top, 28, 52);
+  @include fp(margin-bottom, 28, 52);
+  font-weight: 300;
+  text-align: left;
+}
+
+h3 {
+  @include fp(font-size, 18, 24);
+  @include fp(margin-top, 22, 34);
+  @include fp(margin-bottom, 22, 34);
+  font-weight: 500;
+  text-align: left;
+}
+// AppBlockQuote
+h4 {
+  @include fp(font-size, 20, 26);
+  @include fp(margin-top, 22, 34);
+  @include fp(margin-bottom, 22, 34);
+  font-weight: 300;
+  text-align: left;
+}
+
+p {
+  @include fp(font-size, 17, 21);
+  @include fp(margin-top, 22, 32);
+  @include fp(margin-bottom, 22, 32);
+  text-align: left;
+}
+
+// .legal {
+//   font-size: $h6;
+// }

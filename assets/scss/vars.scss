@@ -1,0 +1,106 @@
+// ==================================================================
+// App Variables / Theme / Sizes
+//
+
+// Base Size 18px
+$base:                  16px !default;
+$base-m:                18px !default;
+
+$golden:              1.618033 !default;
+$gap:                 2rem;
+
+// Media
+$tablet:              480px;
+$desktop:             768px;
+$hd:                  1024px;
+$md:                  992px;
+$lg:                  1200px;
+
+
+// ========================================================================
+// App Variables / Theme / Colors
+//
+
+$brand:               #0099FF !default; // Deep Blue
+// $brand-alt:           darken($brand, 10); // Deep Blue
+
+$background:          #222640;
+$background-alt:      #1D1F2C;
+
+$black:               #000000 !default;
+$white:               #FFFFFF !default;
+$red:                 #FF524A;
+$green:               #00D684;
+
+$muted:               #354879;
+$muted-alt:           #424F71;
+
+// $background:          $white;
+// $muted:               #777;
+
+// ========================================================================
+// App Variables / Theme / Typography
+//
+
+$font:                'Montserrat', 'Helvetica Neue', Arial, sans-serif !default;
+$font-alt:            'Montserrat', sans-serif !default;
+
+$light: 300;
+$bold: 900;
+
+// $line-height:         1.414 !default;       // 24px
+$line-height:         $golden;       // 24px
+
+
+
+$h1:                  3.00000rem !default;  // 54px
+$h2:                  1.66666rem !default;  // 21px
+
+$h3:                  1.22222rem !default;  // 36px
+$h4:                  1.11111rem !default;  // 30px
+$h5:                  0.99999rem !default;  // 24px
+$h6:                  0.88888rem !default;  // 21px
+$h7:                  0.83333rem !default;  // 15px
+$h8:                  0.77777rem !default;  // 14px
+$h9:                  0.66666rem !default;  // 12px
+$h9:                  0.55555rem !default;  // 10px
+
+// ========================================================================
+// App Variables / Theme / Controls
+//
+
+// Set Golden Ratio
+
+// ========================================================================
+// App Variables / Theme / Form Control
+//
+
+$active-font-size: $h7 !default;
+$active-top: -$base-m !default;
+
+// Margin & Paddings
+$gap: $h2 * 1.5 !default;
+$spacer: $h2 / 8 !default;
+$fieldset-margin: 20px !default;
+$checkbox-gap: $h2 * 2 !default;
+$checkbox-top: 0 !default;
+$radio-margin: $h2 / -4 !default;
+
+// Colors
+$input-color: $white !default;
+$border-color: $brand !default;
+$label-color: $white !default;
+$active-color: $white !default;
+$focus-color: $brand !default;
+$error-color: $brand !default;
+
+$form-input-background: #1A1E31;
+$form-input-background-active: #202438;
+$form-input-placeholder-text: $muted-alt;
+$form-input-border: $muted;
+$form-legal-text: #6C7793;
+
+// Animation
+$transition-speed: 0.2s !default;
+
+
