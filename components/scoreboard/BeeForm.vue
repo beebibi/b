@@ -130,7 +130,7 @@ export default {
       var formData = new FormData(formElement)
       var updateActive = this.$root.$emit('update-active')
       var updateScore = this.$root.$emit('update-score')
-      var emitEvent = dataLayer.push({'event': 'formSubmit'})
+      var emitEvent = dataLayer.push({event: 'formSubmit'})
       var url =
         'https://docs.google.com/forms/d/e/1FAIpQLScsRimfgsVx2FS-ThJjqDarMssOEH0VWa6qVnCkqXRhSMISgA/formResponse'
       this.errors = []

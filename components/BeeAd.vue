@@ -28,8 +28,8 @@ export default {
   },
   methods: {
     clickAd() {
-      dataLayer.push({'event': 'clickAd'})
-      window.location.href = "mailto:tlvdllc@gmail.com";
+      window.location.href = 'mailto:tlvdllc@gmail.com'
+      setTimeout(() => dataLayer.push({event: 'clickAd'}), 222)
     }
   }
 }

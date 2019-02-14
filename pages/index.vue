@@ -217,7 +217,7 @@ export default {
       setTimeout(() => (this.activeFace = false), 222)
       setTimeout(() => (this.flush = false), 222)
       setTimeout(() => (this.faceClass = ''), 222)
-      dataLayer.push({'event': 'sting'})
+      setTimeout(() => dataLayer.push({event: 'sting'}), 444)
     },
     press() {
       this.activeFace = false
@@ -229,7 +229,7 @@ export default {
       setTimeout(() => (this.activeFace = false), 666)
       setTimeout(() => (this.flushFart = false), 666)
       setTimeout(() => (this.faceClass = ''), 666)
-      dataLayer.push({'event': 'fart'})
+      setTimeout(() => dataLayer.push({event: 'fart'}), 444)
     },
     stingOption1: function(event) {
       this.faceClass = 'bibi-pain-1'
@@ -254,12 +254,14 @@ export default {
         this.sfxBees.unload('bees')
         setTimeout(() => this.sfxBees.load('bees'), 1)
         this.active = false
-        dataLayer.push({'event': 'viewScore'})
+        setTimeout(() => dataLayer.push({event: 'viewScore'}), 222)
+        // dataLayer.push({event: 'viewScore'})
       } else {
         this.sfxBees.volume(1)
         this.active = true
         this.activeBtn = true
-        dataLayer.push({'event': 'viewStage'})
+        setTimeout(() => dataLayer.push({event: 'viewStage'}), 222)
+        // dataLayer.push({event: 'viewStage'})
       }
     },
     formConfirmation() {

@@ -27,7 +27,7 @@ export default {
   methods: {
     releaseBees() {
       this.$root.$emit('release-bees')
-      dataLayer.push({'event': 'enter'})
+      dataLayer.push({event: 'enter'})
     }
   }
 }
