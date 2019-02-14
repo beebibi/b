@@ -4,7 +4,9 @@
     class="container">
     <div class="bee-ad">
       <div class="inner">
-        <a href="mailto:tlvdllc@gmail.com">Advertise</a>
+        <a @click="clickAd">
+          Advertise
+        </a>
         <span @click="removeAd = true">x</span>
       </div>
     </div>
@@ -22,6 +24,12 @@ export default {
   data() {
     return {
       removeAd: ''
+    }
+  },
+  methods: {
+    clickAd() {
+      dataLayer.push({'event': 'clickAd'})
+      window.location.href = "mailto:tlvdllc@gmail.com";
     }
   }
 }

@@ -72,13 +72,13 @@
     </header>
 
     <!-- Social Icons -->
-    <!-- <transition -->
-    <!-- name="fadeRight" -->
-    <!-- mode="out-in" -->
-    <!-- appear -->
-    <!-- > -->
-    <!-- <bee-social v-if="active" /> -->
-    <!-- </transition> -->
+    <transition
+      name="fadeRight"
+      mode="out-in"
+      appear
+    >
+      <bee-social v-if="active" />
+    </transition>
 
     <!-- Ad Space -->
     <transition
@@ -254,10 +254,12 @@ export default {
         this.sfxBees.unload('bees')
         setTimeout(() => this.sfxBees.load('bees'), 1)
         this.active = false
+        dataLayer.push({'event': 'viewScore'})
       } else {
         this.sfxBees.volume(1)
         this.active = true
         this.activeBtn = true
+        dataLayer.push({'event': 'viewStage'})
       }
     },
     formConfirmation() {
