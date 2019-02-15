@@ -100,7 +100,7 @@
       appear
     >
       <div
-        v-if="active"
+        v-show="active"
         id="bibi"
       >
         <div
@@ -200,8 +200,8 @@ export default {
     this.$root.$on('update-score', this.formConfirmation)
     this.$root.$on('release-bees', this.releaseBees)
     this.$root.$on('revoke-msg', this.revokeMsg)
-    this.sfxBees.load('bees')
-    Howler.autoSuspend = false
+    // this.sfxBees.load('bees')
+    // Howler.autoSuspend = false
   },
   methods: {
     click() {
@@ -337,7 +337,8 @@ header {
 
 .bibi-body {
   // position: absolute;
-  background-image: url('~assets/images/bibi-1.png');
+  // background-image: url('~assets/images/bibi-1.png');
+  background-image: url('/images/bibi-1.png');
   background-position: 50% 100.5%;
   @include fp(background-size, 500, 1050);
   background-repeat: no-repeat;
@@ -359,14 +360,17 @@ header {
 }
 
 .bibi-pain-1 {
-  background-image: url('~assets/images/bibi-2.png');
+  // background-image: url('~assets/images/bibi-2.png');
+  background-image: url('/images/bibi-2.png');
 }
 
 .bibi-pain-2 {
-  background-image: url('~assets/images/bibi-3.png');
+  // background-image: url('~assets/images/bibi-3.png');
+  background-image: url('/images/bibi-3.png');
 }
 
 .bibi-sfxFart {
-  background-image: url('~assets/images/bibi-4.png');
+  // background-image: url('~assets/images/bibi-4.png');
+  background-image: url('/images/bibi-4.png');
 }
 </style>
