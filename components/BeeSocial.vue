@@ -14,7 +14,7 @@
       </icon>
     </a>
     <a
-      href="https://twitter.com/intent/tweet?text=To%20Bee%20or%20not%20to%20Bibi?%20http://pic.twitter.com/ADDIMAGEURL%20&hashtags=BeeBibi&url=https://beebibi.com"
+      href="https://twitter.com/intent/tweet?text=To%20Bee%20or%20not%20to%20Bibi?%20http://pic.twitter.com/leM7mWZ5yq%20&hashtags=BeeBibi&url=https://beebibi.com"
       target="_blank"
       class="container">
       <icon
