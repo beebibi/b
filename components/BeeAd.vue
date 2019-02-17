@@ -5,16 +5,28 @@
     <div class="bee-ad">
       <div class="inner">
         <a @click="clickAd">
-          Advertise
+          <bee-translator
+            :hebrew="'פרסם'"
+            :english="'Advertise'"
+          />
         </a>
-        <span @click="removeAd = true">x</span>
+        <span
+          class="close"
+          @click="removeAd = true">
+          x
+        </span>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import BeeTranslator from '@/components/BeeTranslator'
+
 export default {
+  components: {
+    BeeTranslator
+  },
   props: {
     animate: {
       type: Boolean,
@@ -89,7 +101,7 @@ a {
   }
 }
 
-span {
+span.close {
   position: absolute;
   top: -8px;
   right: -8px;

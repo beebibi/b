@@ -9,8 +9,25 @@
       </div>
     </div>
     <div class="cta">
-      <p>Release the Bees<br>(and Bibi)</p>
+      <p>
+        <bee-translator
+          :hebrew="'שחרר/י את הדבורים'"
+          :english="'Release the Bees'"
+        />
+        <br>
+        <bee-translator
+          :hebrew="'(ואת ביבי)'"
+          :english="'(and Bibi)'"
+        />
+      </p>
     </div>
+    <transition
+      name="pop"
+      mode="out-in"
+      appear
+    >
+      <bee-language-picker />
+    </transition>
     <bee-credit />
   </div>
 </template>
@@ -18,11 +35,15 @@
 <script>
 import BeeIcon from '@/components/BeeIcon'
 import BeeCredit from '@/components/BeeCredit'
+import BeeLanguagePicker from '@/components/BeeLanguagePicker'
+import BeeTranslator from '@/components/BeeTranslator'
 
 export default {
   components: {
     BeeIcon,
-    BeeCredit
+    BeeCredit,
+    BeeLanguagePicker,
+    BeeTranslator
   },
   methods: {
     releaseBees() {
@@ -122,6 +143,10 @@ export default {
     margin-top: 10px;
     color: $muted-alt;
     text-transform: uppercase;
+    .rtl {
+      font-size: 13px;
+      line-height: 13px;
+    }
   }
 }
 

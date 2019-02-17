@@ -2,9 +2,31 @@
   <header>
 
     <!-- Title -->
-    <h1 v-if="userScore"><span>Your</span> Score</h1>
-    <h1 v-else><span>Score</span> board</h1>
-    
+    <h1 v-if="userScore">
+      <span class="highlight">
+        <bee-translator
+          :hebrew="'אישית'"
+          :english="'Your'"
+        />
+      </span>
+      <bee-translator
+        :hebrew="'תוצאה'"
+        :english="'Score'"
+      />
+    </h1>
+    <h1 v-else>
+      <span class="highlight">
+        <bee-translator
+          :hebrew="'תוצאות'"
+          :english="'Score'"
+        />
+      </span>
+      <bee-translator
+        :hebrew="'לוח'"
+        :english="'Board'"
+      />
+    </h1>
+ 
     <!-- Icon: David Star -->
     <bee-close />
     <!-- Next: User > Top Ten -->
@@ -43,11 +65,13 @@
 <script>
 import BeeIcon from '@/components/BeeIcon'
 import BeeClose from '@/components/scoreboard/BeeClose'
+import BeeTranslator from '@/components/BeeTranslator'
 
 export default {
   components: {
     BeeIcon,
-    BeeClose
+    BeeClose,
+    BeeTranslator
   },
   props: {
     userScore: {
@@ -76,8 +100,11 @@ header {
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: 0 0 6px 0;
-    span {
+    span.highlight {
       color: $brand;
+    }
+    .rtl {
+      margin: 5px;
     }
   }
 }

@@ -14,9 +14,24 @@
         <li/>
         <li/>
         <li>
-          <span class="score-name">Name</span>
-          <span class="score-stings">Stings</span>
-          <span class="score-farts">Farts</span>
+          <span class="score-name">
+            <bee-translator
+              :hebrew="'שם'"
+              :english="'Name'"
+            />
+          </span>
+          <span class="score-stings">
+            <bee-translator
+              :hebrew="'עקיצות'"
+              :english="'Stings'"
+            />
+          </span>
+          <span class="score-farts">
+            <bee-translator
+              :hebrew="'פליצות'"
+              :english="'Farts'"
+            />
+          </span>
         </li>
       </ul>
       <ol
@@ -44,12 +59,13 @@
 
 <script>
 import BeeScoreCardHeader from '@/components/scoreboard/BeeScoreCardHeader'
-// import BeeButton from '@/components/BeeButton'
+import BeeTranslator from '@/components/BeeTranslator'
 import axios from 'axios'
 
 export default {
   components: {
-    BeeScoreCardHeader
+    BeeScoreCardHeader,
+    BeeTranslator
     // BeeButton
   },
   data() {
@@ -65,14 +81,11 @@ export default {
       // key: 'AIzaSyAdmKyvi3e9dVxwoLvVkJdqD5xRNwRYveI'
     }
   },
-  // computed: {
-  //   sortByStings() {
-  //     var s = this.scores.value[1]
-  //     return this.scores
-  //       .slice()
-  //       .sort((a, b) => parseFloat(a.s) - parseFloat(b.s))
-  //   }
-  // },
+  computed: {
+    isHebrew() {
+      return this.$store.state.isHebrew
+    }
+  },
   async mounted() {
     const scores = await this.$axios.$get(this.url)
     this.dataReady = true

@@ -15,7 +15,12 @@
           easing="easeOutCirc"
           class="score"
         />
-        <span>Stings</span>
+
+        <bee-translator
+          :hebrew="'עקיצות'"
+          :english="'Stings'"
+        />
+
       </div>
 
       <bee-score-card-divider />
@@ -29,7 +34,12 @@
           easing="easeOutCirc"
           class="score"
         />
-        <span>Farts</span>
+
+        <bee-translator
+          :hebrew="'פליצות'"
+          :english="'Farts'"
+        />
+
       </div>
     </div>
     <bee-form
@@ -44,13 +54,15 @@ import BeeForm from '@/components/scoreboard/BeeForm'
 import BeeScoreCardHeader from '@/components/scoreboard/BeeScoreCardHeader'
 import BeeScoreCardDivider from '@/components/scoreboard/BeeScoreCardDivider'
 import AnimatedNumber from 'animated-number-vue'
+import BeeTranslator from '@/components/BeeTranslator'
 
 export default {
   components: {
     BeeForm,
     BeeScoreCardHeader,
     BeeScoreCardDivider,
-    AnimatedNumber
+    AnimatedNumber,
+    BeeTranslator
   },
   props: {
     stings: {
@@ -67,6 +79,11 @@ export default {
       errors: [],
       name: null,
       email: null
+    }
+  },
+  computed: {
+    isHebrew() {
+      return this.$store.state.isHebrew
     }
   },
   methods: {

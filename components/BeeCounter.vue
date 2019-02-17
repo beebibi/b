@@ -90,6 +90,12 @@ export default {
     @include fp(font-size, 16, 32);
     color: #424f71;
   }
+  &.rtl {
+    .desc {
+      @include fp(font-size, 20, 38);
+      @include fp(line-height, 24, 42);
+    }
+  }
 }
 
 .counter.fart {

@@ -51,10 +51,23 @@
     </div>
 
     <p class="legal">
-      If previuosly submitted Email is used, your scores will be combined. Please allow 24-48 hours for scores update. <span>Emails are never published.</span>
+      <bee-translator
+        :hebrew="'שילוב תוצאות קודמות נעשה ע״י שימוש חוזר של הדוא״ל שלך. כתובות דוא״ל נשארות חסויות ולעולם לא יפורסמו.'"
+        :english="'If previuosly submitted Email is used, your scores will be combined. Emails are never published.'"
+      />
     </p>
 
     <bee-button
+      v-if="isHebrew"
+      id="contact-form-submit"
+      :disabled="disableStatus()"
+      :button-class="isEmailValid()"
+      class="fill"
+      title="שלח/י תוצאה"
+    />
+
+    <bee-button
+      v-else
       id="contact-form-submit"
       :disabled="disableStatus()"
       :button-class="isEmailValid()"
@@ -67,11 +80,14 @@
 
 <script>
 import BeeButton from '@/components/BeeButton'
+import BeeTranslator from '@/components/BeeTranslator'
+
 import axios from 'axios'
 
 export default {
   components: {
-    BeeButton
+    BeeButton,
+    BeeTranslator
     // axios
   },
   props: {
@@ -91,6 +107,11 @@ export default {
       email: null,
       reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/,
       isDisabled: true
+    }
+  },
+  computed: {
+    isHebrew() {
+      return this.$store.state.isHebrew
     }
   },
   watch: {
@@ -166,7 +187,14 @@ export default {
   margin: 0;
   color: $form-legal-text;
   span {
-    color: $brand;
+    color: lighten($muted, 11);
+    &.rtl {
+      // direction: rtl;
+      text-align: right;
+      // unicode-bidi: embed;
+      float: right;
+      margin-bottom: 20px;
+    }
   }
 }
 </style>

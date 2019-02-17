@@ -7,8 +7,6 @@
       :class="{preLaunch: preLaunch}"
     />
 
-    <!-- <bee-users-scores /> -->
-
     <!-- Bee Active/Sound Controler -->
     <bee-sound-button
       :class="[{activeBtn: activeBtn}, {init: initBtn}, {beeless: !active}]"
@@ -48,7 +46,7 @@
         appear
       >
         <bee-counter
-          v-if="active"
+          v-if="active && !isHebrew"
           :counter="counter"
           :class="{flush: flush}"
         />
@@ -61,12 +59,43 @@
         appear
       >
         <bee-counter
-          v-if="active"
+          v-if="active && !isHebrew"
           :text="'Farts'"
           :counter="fartCounter"
           :duration="duration"
           :class="{flushFart: flushFart}"
           class="fart"
+        />
+      </transition>
+
+      <!-- Counter: עקיצות -->
+      <transition
+        name="fadeRightUp"
+        mode="out-in"
+        appear
+      >
+        <bee-counter
+          v-if="active && isHebrew"
+          :text="'עקיצות'"
+          :counter="counter"
+          :class="{flush: flush}"
+          class="rtl"
+        />
+      </transition>
+
+      <!-- Counter: פליצות -->
+      <transition
+        name="fadeLeftUp"
+        mode="out-in"
+        appear
+      >
+        <bee-counter
+          v-if="active && isHebrew"
+          :text="'פליצות'"
+          :counter="fartCounter"
+          :duration="duration"
+          :class="{flushFart: flushFart}"
+          class="fart rtl"
         />
       </transition>
     </header>
@@ -81,13 +110,13 @@
     </transition>
 
     <!-- Ad Space -->
-    <transition
-      name="fadeRight"
-      mode="out-in"
-      appear
-    >
-      <bee-ad v-if="activeAd" />
-    </transition>
+    <!-- <transition -->
+    <!-- name="fadeRight" -->
+    <!-- mode="out-in" -->
+    <!-- appear -->
+    <!-- > -->
+    <!-- <bee-ad v-if="activeAd" /> -->
+    <!-- </transition> -->
 
     <!-- Ad Space -->
     <bee-messenger v-if="activeMsg" />
@@ -131,10 +160,11 @@ import BeeSoundButton from '@/components/BeeSoundButton'
 import BeeLoadingIndicator from '@/components/BeeLoadingIndicator'
 import BeeSocial from '@/components/BeeSocial'
 import BeeCounter from '@/components/BeeCounter'
-import BeeAd from '@/components/BeeAd'
+// import BeeAd from '@/components/BeeAd'
 import BeeMessenger from '@/components/BeeMessenger'
 import BeeScores from '@/components/scoreboard/BeeScores'
 import {Howl, Howler} from 'howler'
+import {mapMutations} from 'vuex'
 
 export default {
   layout: 'home',
@@ -145,7 +175,7 @@ export default {
     BeeLoadingIndicator,
     BeeSocial,
     BeeCounter,
-    BeeAd,
+    // BeeAd,
     BeeMessenger,
     BeeScores
   },
@@ -156,6 +186,7 @@ export default {
   },
   data() {
     return {
+      // translate: '',
       counter: 158666,
       fartCounter: 45826,
       userCounter: 0,
@@ -195,15 +226,24 @@ export default {
       })
     }
   },
+  computed: {
+    isHebrew() {
+      return this.$store.state.isHebrew
+    }
+  },
   created() {
     this.$root.$on('update-active', this.toggleActive)
     this.$root.$on('update-score', this.formConfirmation)
     this.$root.$on('release-bees', this.releaseBees)
     this.$root.$on('revoke-msg', this.revokeMsg)
+    // this.translate()
     // this.sfxBees.load('bees')
     // Howler.autoSuspend = false
   },
   methods: {
+    // translate() {
+    //   this.$store.commit('translate')
+    // },
     click() {
       this.activeFace = false
       this.flush = true
