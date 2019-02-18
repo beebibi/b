@@ -2,27 +2,33 @@
   <header>
 
     <!-- Title -->
-    <h1 v-if="userScore">
+    <h1
+      v-if="userScore"
+      :class="{rtl: isHebrew}"
+    >
       <span class="highlight">
         <bee-translator
-          :hebrew="'אישית'"
+          :hebrew="'תוצאה'"
           :english="'Your'"
         />
       </span>
       <bee-translator
-        :hebrew="'תוצאה'"
+        :hebrew="'אישית'"
         :english="'Score'"
       />
     </h1>
-    <h1 v-else>
+    <h1
+      v-else
+      :class="{rtl: isHebrew}"
+    >
       <span class="highlight">
         <bee-translator
-          :hebrew="'תוצאות'"
+          :hebrew="'לוח'"
           :english="'Score'"
         />
       </span>
       <bee-translator
-        :hebrew="'לוח'"
+        :hebrew="'תוצאות'"
         :english="'Board'"
       />
     </h1>
@@ -79,6 +85,11 @@ export default {
       default: false
     }
   },
+  computed: {
+    isHebrew() {
+      return this.$store.state.isHebrew
+    }
+  },
   methods: {
     flipBoard() {
       this.$root.$emit('flip-board')
@@ -94,6 +105,10 @@ header {
   padding: 0;
   // cursor: pointer;
   h1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     font-size: 18px;
     line-height: 21px;
     font-weight: $bold;
@@ -102,9 +117,10 @@ header {
     margin: 0 0 6px 0;
     span.highlight {
       color: $brand;
+      margin-left: 5px;
     }
-    .rtl {
-      margin: 5px;
+    &.rtl {
+      flex-direction: row-reverse;
     }
   }
 }
