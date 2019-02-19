@@ -38,24 +38,25 @@ export default {
 .language-picker {
   display: inline-block;
   position: absolute;
-  top: 25px;
-  font-size: 11px;
-  font-weight: 300;
+  // top: 25px;
+  // right: 30px;
+  bottom: 10vh;
+  font-size: 10px;
+  font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 1px;
   padding: 6px 18px;
-  right: 30px;
-  color: $white;
-  background: $muted;
-  // border: 1px solid $muted;
+  color: $brand;
+  // background: $muted;
+  border: 2px solid $brand;
   border-radius: 50px;
   z-index: 1000;
   cursor: pointer;
   user-select: none;
   .rtl {
-    font-weight: 300;
-    font-size: 13px;
-    line-height: 13px;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 12px;
   }
 }
 

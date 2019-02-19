@@ -28,20 +28,20 @@
     >
       <bee-language-picker />
     </transition>
-    <bee-credit />
+    <!-- <bee-credit /> -->
   </div>
 </template>
 
 <script>
 import BeeIcon from '@/components/BeeIcon'
-import BeeCredit from '@/components/BeeCredit'
+// import BeeCredit from '@/components/BeeCredit'
 import BeeLanguagePicker from '@/components/BeeLanguagePicker'
 import BeeTranslator from '@/components/BeeTranslator'
 
 export default {
   components: {
     BeeIcon,
-    BeeCredit,
+    // BeeCredit,
     BeeLanguagePicker,
     BeeTranslator
   },
