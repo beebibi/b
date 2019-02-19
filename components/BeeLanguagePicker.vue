@@ -36,11 +36,14 @@ export default {
 
 <style scoped lang="scss">
 .language-picker {
-  display: inline-block;
+  // display: inline-block;
   position: absolute;
+  width: 100px;
   // top: 25px;
   // right: 30px;
   bottom: 10vh;
+  left: 50%;
+  margin-left: -50px;
   font-size: 10px;
   font-weight: 900;
   text-transform: uppercase;
