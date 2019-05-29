@@ -110,13 +110,13 @@
     </transition>
 
     <!-- Ad Space -->
-    <!-- <transition -->
-    <!-- name="fadeRight" -->
-    <!-- mode="out-in" -->
-    <!-- appear -->
-    <!-- > -->
-    <!-- <bee-ad v-if="activeAd" /> -->
-    <!-- </transition> -->
+    <transition
+      name="fadeRight"
+      mode="out-in"
+      appear
+    >
+      <bee-ad v-if="activeAd" />
+    </transition>
 
     <!-- Ad Space -->
     <bee-messenger v-if="activeMsg" />
@@ -160,7 +160,7 @@ import BeeSoundButton from '@/components/BeeSoundButton'
 import BeeLoadingIndicator from '@/components/BeeLoadingIndicator'
 import BeeSocial from '@/components/BeeSocial'
 import BeeCounter from '@/components/BeeCounter'
-// import BeeAd from '@/components/BeeAd'
+import BeeAd from '@/components/BeeAd'
 import BeeMessenger from '@/components/BeeMessenger'
 import BeeScores from '@/components/scoreboard/BeeScores'
 import {Howl, Howler} from 'howler'
@@ -175,7 +175,7 @@ export default {
     BeeLoadingIndicator,
     BeeSocial,
     BeeCounter,
-    // BeeAd,
+    BeeAd,
     BeeMessenger,
     BeeScores
   },

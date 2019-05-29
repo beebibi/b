@@ -4,7 +4,12 @@
     class="container">
     <div class="bee-ad">
       <div class="inner">
-        <a @click="clickAd" />
+        <a @click="clickAd">
+          <bee-translator
+            :hebrew="'פרסם'"
+            :english="'Advertise'"
+          />
+        </a>
         <span
           class="close"
           @click="removeAd = true">
@@ -35,8 +40,7 @@ export default {
   },
   methods: {
     clickAd() {
-      // window.location.href = 'https://telemet.org'
-      window.open('https://telemet.org', '_blank')
+      window.location.href = 'mailto:tlvdllc@gmail.com'
       setTimeout(() => dataLayer.push({event: 'clickAd'}), 222)
     }
   }
@@ -64,12 +68,12 @@ export default {
     transform: translateX(150%);
     @include animation(
       fadeInAndOutAd,
-      0.333s,
-      1.333s,
+      23.333s,
+      3.333s,
       cubic-bezier(0, 0.33, 0.2, 1),
       1,
       forwards,
-      forwards
+      none
     );
   }
   // transition: all 1s 2s cubic-bezier(0, 0.33, 0.2, 1);
@@ -82,18 +86,18 @@ a {
   display: block;
   width: 118px;
   height: 88px;
-  font-size: $h6;
-  font-weight: $bold;
+  font-size: $h7;
   text-align: center;
   padding-top: 32px;
   margin: 0;
-  color: lighten($white, 10);
+  color: lighten($muted, 10);
   border: 2px solid $muted;
-  background-image: url('/images/telemet-ad.jpg');
+  background: rgba($brand, 0.05);
   border-radius: 2px;
   user-select: none;
   &:hover {
-    border-color: $brand;
+    color: $brand;
+    background: rgba($brand, 0);
   }
 }
 
@@ -114,7 +118,7 @@ span.close {
   user-select: none;
   &:hover {
     color: $brand;
-    background: rgba($background, 100);
+    background: rgba($brand, 0);
     border-color: $brand;
   }
 }
@@ -124,9 +128,21 @@ span.close {
     opacity: 0;
     transform: translateX(150%);
   }
-  100% {
+  3% {
     opacity: 1;
     transform: translateX(0%);
+  }
+  40% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  43% {
+    opacity: 0;
+    transform: translateX(150%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(150%);
   }
 }
 </style>
